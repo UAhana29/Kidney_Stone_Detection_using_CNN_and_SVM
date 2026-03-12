@@ -1,0 +1,27 @@
+# Ignore datasets
+dataset/
+
+# Ignore uploaded images
+static/uploads/
+
+# Ignore images
+*.jpg
+*.jpeg
+*.png
+
+# Ignore ML model files
+*.h5
+*.model
+*.pth
+
+# Ignore python cache
+__pycache__/
+
+# Ignore system files
+.DS_Store
+CT_Dataset/
+CT_Images/
+*.pkl
+*.jpg
+*.png
+*.jpeg
