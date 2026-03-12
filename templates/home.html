@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section">
+    <h1>Advanced Kidney Stone Detection System</h1>
+    <p>Using Clinical Data (SVM) and CT Scan Images (CNN) for accurate diagnosis and severity estimation.</p>
+
+    <div class="action-buttons">
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('clinical') }}" class="btn primary"><i class="fas fa-notes-medical"></i> Analyze Clinical
+            Data</a>
+        <a href="{{ url_for('ct') }}" class="btn secondary"><i class="fas fa-x-ray"></i> Analyze CT Scan</a>
+        {% else %}
+        <a href="{{ url_for('login') }}" class="btn primary">Login to Start</a>
+        <a href="{{ url_for('register') }}" class="btn secondary">Register Account</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="features-grid">
+    <div class="feature-card">
+        <i class="fas fa-file-medical-alt"></i>
+        <h3>Clinical Analysis</h3>
+        <p>Predict kidney stones using patient's urine analysis data with severity estimation.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-microscope"></i>
+        <h3>CT Scan Imaging</h3>
+        <p>Detect stones using Deep Learning (CNN) on CT scans with localization heatmaps.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-history"></i>
+        <h3>History & Reports</h3>
+        <p>Track your medical history and generate professional AI-assisted reports.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Model Accuracy</h3>
+        <p>View the training and validation accuracy graphs of the CNN model.</p>
+        <a href="{{ url_for('accuracy_graph') }}" class="card-link">View Accuracy Graph</a>
+    </div>
+</div>
+{% endblock %}
